@@ -3,7 +3,7 @@ import sqlite3
 
 # CONNECT TO DATABASE
 
-conn = sqlite3.connect("database.sqlite")  # change name if repo uses different file
+conn = sqlite3.connect("shipment_database.db") 
 cursor = conn.cursor()
 
 # SPREADSHEET 0 (DIRECT INSERT)
@@ -49,9 +49,8 @@ for _, row in grouped.iterrows():
         row["quantity"]
     ))
 
-# -----------------------------
 # SAVE CHANGES
-# -----------------------------
+
 conn.commit()
 conn.close()
 
